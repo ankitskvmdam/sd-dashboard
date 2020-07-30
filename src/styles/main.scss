@@ -46,11 +46,22 @@ body {
 .table-container {
     padding: 3rem 1rem;
 
-    .vs-con-table.stripe .tr-values:nth-child(2n) {
-        background: #f3f3f3 !important;
-    }
-
-    .vs-con-table.stripe .tr-values {
+    .vs-con-table .tr-values {
+        border-bottom: 1px solid #eee;
         cursor: pointer;
+
+        &:hover {
+            background: #f3f3f3;
+            border-bottom-color: #fff;
+        }
     }
+}
+
+.vs-tabs-primary .con-ul-tabs .line-vs-tabs {
+    background: #005bff;
+    box-shadow: 0 0 transparent !important;
+}
+
+.ul-tabs {
+    border-bottom: 1px solid #eee;
 }

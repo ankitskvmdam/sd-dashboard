@@ -1,10 +1,7 @@
 <template>
   <div class="table-container">
       <vs-table
-        stripe
         :data="users"
-        v-model="selected"
-        @selected="handleSelected"
     >
         <template slot="thead">
             <vs-th>Name</vs-th>
@@ -16,7 +13,7 @@
         </template>
 
         <template slot-scope="{data}">
-            <vs-tr :key="indextr" v-for="(tr, indextr) in data" >
+            <vs-tr :key="'sd' + indextr" v-for="(tr, indextr) in data" >
                 <vs-td :data="data[indextr].Name">
                     {{data[indextr].Name}}
                 </vs-td>
@@ -40,6 +37,25 @@
                 <vs-td :data="data[indextr]['Voilation Density']">
                     {{data[indextr]['Voilation Density']}}
                 </vs-td>
+
+                <template class="expand-user" slot="expand">
+                    <div class="con-expand-users">
+                        <div class="con-btns-user">
+                            <video
+                                width="500px"
+                                height="350px"
+                                controls
+                                style="object-fit: cover;"
+                                v-if="data[indextr]['video'] != undefined || data[indextr]['video'] != null"
+                            >
+                            <source :src="data[indextr]['video']" type="video/mp4" />
+                            </video>
+                            <p v-else>
+                                Video Not Found!
+                            </p>
+                        </div>
+                    </div>
+                </template>
             </vs-tr>
         </template>
     </vs-table>
@@ -54,16 +70,9 @@ export default {
     data() {
         return {
             users: Data,
-            selected: []
         }
     },
     methods: {
-        handleSelected(tr) {
-            this.$vs.notify({
-                title:`Test Notification`,
-                text:`Its working`
-            })
-        },
     }
 }
 </script>

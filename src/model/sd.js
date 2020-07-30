@@ -1,3 +1,6 @@
+import RahuVideo from "./sd_video/rahul.mp4";
+import RajuVideo from "./sd_video/raju.mp4";
+
 export default [
   {
     "Name": "Rahul",
@@ -5,7 +8,8 @@ export default [
     "Visitor ID": "Null",
     "Cluster/Location": "Cam1",
     "Voilation Score": "5",
-    "Voilation Density": "0.5"
+    "Voilation Density": "0.5",
+    "video": RahuVideo,
   },
   {
     "Name": "Raju",
@@ -13,7 +17,8 @@ export default [
     "Visitor ID": "Null",
     "Cluster/Location": "Cam2",
     "Voilation Score": "4",
-    "Voilation Density": "0.4"
+    "Voilation Density": "0.4",
+    "video": RajuVideo,
   },
   {
     "Name": "Reshma",
@@ -21,7 +26,8 @@ export default [
     "Visitor ID": "Null",
     "Cluster/Location": "Cam3",
     "Voilation Score": "6",
-    "Voilation Density": "0.6"
+    "Voilation Density": "0.6",
+    "video": null,
   },
   {
     "Name": "Ramiz",
@@ -29,7 +35,8 @@ export default [
     "Visitor ID": "Null",
     "Cluster/Location": "Cam4",
     "Voilation Score": "4",
-    "Voilation Density": "0.4"
+    "Voilation Density": "0.4",
+    "video": null,
   },
   {
     "Name": "Ali",
@@ -37,6 +44,7 @@ export default [
     "Visitor ID": "Null",
     "Cluster/Location": "Cam5",
     "Voilation Score": "2",
-    "Voilation Density": "0.2"
+    "Voilation Density": "0.2",
+    "video": null,
   }
 ]
