@@ -33,6 +33,26 @@
                 <vs-td :data="data[indextr]['time span']">
                     {{data[indextr]['time span']}}
                 </vs-td>
+
+                <template class="expand-user" slot="expand">
+                    <div class="con-expand-users">
+                        <div class="con-btns-user">
+                            <video
+                                width="500px"
+                                height="350px"
+                                controls
+                                style="object-fit: cover;"
+                                v-if="data[indextr]['video'] != undefined || data[indextr]['video'] != null"
+                            >
+                            <source :src="data[indextr]['video']" type="video/mp4" />
+                            </video>
+                            <p v-else>
+                                Video Not Found! <br/>
+                                If you want to see video select 2nd, 3rd, and 4th row.
+                            </p>
+                        </div>
+                    </div>
+                </template>
             </vs-tr>
         </template>
     </vs-table>
@@ -51,14 +71,17 @@ export default {
     },
     methods: {
         handleSelected(tr) {
-            this.$vs.notify({
-                title:`Please Wait`,
-                text:`Redirecting to: ${tr.link}`
-            })
 
-            setTimeout(() => {
-                window.location.href = tr.link;
-            }, 3000)
+            if (tr.link !== undefined) {
+                this.$vs.notify({
+                    title:`Please Wait`,
+                    text:`Redirecting to: ${tr.link}`
+                })
+    
+                setTimeout(() => {
+                    window.location.href = tr.link;
+                }, 3000)
+            }
         }
     }
 }
