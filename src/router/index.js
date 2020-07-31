@@ -16,6 +16,21 @@ Vue.use(VueRouter)
     name: 'SocialDistancing',
     component: SocialDistancing
   },
+  {
+    path: '/sd-1/:id',
+    name: 'SD1Page',
+    component: () => import(/* webpackChunkName: "SD1Page" */ "../views/SD1Page.vue"),
+  },
+  {
+    path: '/sd-2/:id',
+    name: 'SD2Page',
+    component: () => import(/* webpackChunkName: "SD2Page" */ "../views/SD2Page.vue"),
+  },
+  {
+    path: '/sd-3/:id',
+    name: 'SD3Page',
+    component: () => import(/* webpackChunkName: "SD3Page" */ "../views/SD3Page.vue"),
+  },
 
 ]
 

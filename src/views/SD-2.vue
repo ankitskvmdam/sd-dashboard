@@ -2,6 +2,7 @@
   <div class="table-container">
       <vs-table
         :data="users"
+        @selected="handleSelected"
     >
         <template slot="thead">
             <vs-th>Name</vs-th>
@@ -14,7 +15,7 @@
         </template>
 
         <template slot-scope="{data}">
-            <vs-tr :key="'Mask' + indextr" v-for="(tr, indextr) in data" >
+            <vs-tr :data="indextr" :key="'Mask' + indextr" v-for="(tr, indextr) in data" >
                 <vs-td :data="data[indextr].Name">
                     {{data[indextr].Name}}
                 </vs-td>
@@ -43,7 +44,7 @@
                     {{data[indextr]['mask']}}
                 </vs-td>
 
-                <template class="expand-user" slot="expand">
+                <!-- <template class="expand-user" slot="expand">
                     <div class="con-expand-users">
                         <div class="con-btns-user">
                             <video
@@ -60,7 +61,7 @@
                             </p>
                         </div>
                     </div>
-                </template>
+                </template> -->
             </vs-tr>
         </template>
     </vs-table>
@@ -75,6 +76,11 @@ export default {
     data() {
         return {
             users: Data,
+        }
+    },
+    methods: {
+        handleSelected(indextr) {
+            this.$router.push(`/sd-2/${indextr}`)
         }
     }
 }

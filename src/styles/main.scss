@@ -65,3 +65,11 @@ body {
 .ul-tabs {
     border-bottom: 1px solid #eee;
 }
+
+.flex-wrapper {
+    display: flex;
+
+    .half {
+        flex: 1;
+    }
+}

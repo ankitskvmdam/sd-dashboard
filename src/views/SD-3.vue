@@ -13,7 +13,7 @@
         </template>
 
         <template slot-scope="{data}">
-            <vs-tr :data="tr" :key="'density' + indextr" v-for="(tr, indextr) in data" >
+            <vs-tr :data="{tr, indextr}" :key="'density' + indextr" v-for="(tr, indextr) in data" >
                 <vs-td :data="data[indextr]['number of people']">
                     {{data[indextr]['number of people']}}
                 </vs-td>
@@ -34,7 +34,7 @@
                     {{data[indextr]['time span']}}
                 </vs-td>
 
-                <template class="expand-user" slot="expand">
+                <!-- <template class="expand-user" slot="expand">
                     <div class="con-expand-users">
                         <div class="con-btns-user">
                             <video
@@ -52,7 +52,7 @@
                             </p>
                         </div>
                     </div>
-                </template>
+                </template> -->
             </vs-tr>
         </template>
     </vs-table>
@@ -70,17 +70,22 @@ export default {
         }
     },
     methods: {
-        handleSelected(tr) {
+        handleSelected(obj) {
 
-            if (tr.link !== undefined) {
+            console.log(obj)
+            if (obj.tr.link !== undefined) {
                 this.$vs.notify({
                     title:`Please Wait`,
-                    text:`Redirecting to: ${tr.link}`
+                    text:`Redirecting to: ${obj.tr.link}`
                 })
     
                 setTimeout(() => {
-                    window.location.href = tr.link;
+                    window.location.href = obj.tr.link;
                 }, 3000)
+            }
+
+            else {
+                this.$router.push(`/sd-3/${obj.indextr}`)
             }
         }
     }
