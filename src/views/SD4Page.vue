@@ -1,16 +1,16 @@
 <template>
     <div class="route-container">
-        <h2 style="margin-bottom: 1rem;">Social Distancing</h2>
+        <h2 style="margin-bottom: 1rem;">Contactless Attendance</h2>
         <div v-if="currentData == null">Loading...</div>
         <div v-else class="flex-wrapper">
             <div class="half">
                 <br><br>
-                <div>Name: <b> {{ currentData.Name }} </b><br><br></div>
-                <div>Employee Id: <b> {{ currentData['Employee ID'] }} </b><br><br></div>
-                <div>Visitor Id: <b> {{ currentData['Visitor ID'] }} </b><br><br></div>
-                <div>Cluster/Location: <b> {{ currentData['Cluster/Location'] }} </b><br><br></div>
-                <div>Violation Score: <b> {{ currentData['Voilation Score'] }} </b><br><br></div>
-                <div>Violation Density: <b> {{ currentData['Voilation Density'] }} </b><br><br></div>
+                <div>Name: <b> {{ currentData['Name'] }} </b><br><br></div>
+                <div>Employee Id: <b> {{ currentData['Emp_id'] }} </b><br><br></div>
+                <div>Cluster/Location: <b> {{ currentData['location'] }} </b><br><br></div>
+                <div>Login Time: <b> {{ currentData['login time'] }} </b><br><br></div>
+                <div>Attendance: <b> {{ currentData['attendance status'] }} </b><br><br></div>
+                <div>Accuracy: <b> {{ currentData['accuracy'] }} </b><br><br></div>
             </div>
             <div class="half">
                 <video
@@ -25,7 +25,6 @@
                 <p v-else>
                     Video Not Found!
                 </p>
-
                 <div style="margin-top: 1rem">
                     <Chart
                         :chart-data="currentData.graph"
@@ -37,11 +36,11 @@
 </template>
 
 <script>
-import Data from "@/model/sd"
+import Data from "@/model/attendence"
 import Chart from  "./Chart.vue"
 
 export default {
-    name: "SD-1",
+    name: "SD-4",
     components: {
         Chart
     },

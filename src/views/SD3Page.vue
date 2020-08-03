@@ -5,11 +5,11 @@
         <div v-else class="flex-wrapper">
             <div class="half">
                 <br><br>
-                Number of People: <b> {{ currentData['number of people'] }} </b><br><br>
-                Mask Violator(s): <b> {{ currentData['mask_voilators'] }} </b><br><br>
-                Location: <b> {{ currentData['location'] }} </b><br><br>
-                SD Violator(s): <b> {{ currentData['sd_voilators'] }} </b><br><br>
-                Time Span: <b> {{ currentData['time span'] }} </b><br><br>
+                <div>Number of People: <b> {{ currentData['number of people'] }} </b><br><br></div>
+                <div>Mask Violator(s): <b> {{ currentData['mask_voilators'] }} </b><br><br></div>
+                <div>Location: <b> {{ currentData['location'] }} </b><br><br></div>
+                <div>SD Violator(s): <b> {{ currentData['sd_voilators'] }} </b><br><br></div>
+                <div>Time Span: <b> {{ currentData['time span'] }} </b><br><br></div>
             </div>
             <div class="half">
                 <video

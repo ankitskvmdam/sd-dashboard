@@ -5,13 +5,13 @@
         <div v-else class="flex-wrapper">
             <div class="half">
                 <br><br>
-                Name: <b> {{ currentData.Name }} </b><br><br>
-                Employee Id: <b> {{ currentData['Empid'] }} </b><br><br>
-                Visitor Id: <b> {{ currentData['Visitorid'] }} </b><br><br>
-                Cluster/Location: <b> {{ currentData['cluster/location'] }} </b><br><br>
-                Violation Score: <b> {{ currentData['voilation score'] }} </b><br><br>
-                Violation Density: <b> {{ currentData['voilation density'] }} </b><br><br>
-                Mask: <b> {{ currentData['mask'] }} </b><br><br>
+                <div>Name: <b> {{ currentData.Name }} </b><br><br></div>
+                <div>Employee Id: <b> {{ currentData['Empid'] }} </b><br><br></div>
+                <div>Visitor Id: <b> {{ currentData['Visitorid'] }} </b><br><br></div>
+                <div>Cluster/Location: <b> {{ currentData['cluster/location'] }} </b><br><br></div>
+                <div>Violation Score: <b> {{ currentData['voilation score'] }} </b><br><br></div>
+                <div>Violation Density: <b> {{ currentData['voilation density'] }} </b><br><br></div>
+                <div>Mask: <b> {{ currentData['mask'] }} </b><br><br></div>
             </div>
             <div class="half">
                 <video

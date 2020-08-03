@@ -34,8 +34,8 @@
         Containment Zone
       </vs-sidebar-item>
 
-      <vs-sidebar-item index="7" icon="linear_scale" to="/temp-page">
-        Contactless Attendence
+      <vs-sidebar-item index="7" icon="linear_scale" to="/attendance">
+        Contactless Attendance
       </vs-sidebar-item>
 
       <vs-sidebar-item index="5" icon="track_changes" to="/temp-page">
