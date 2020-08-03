@@ -1,6 +1,6 @@
 <template>
     <div class="route-container">
-        <h2 style="margin-bottom: 1rem;">Social Distancing - Mask</h2>
+        <h2 style="margin-bottom: 1rem;">Mask Compliance</h2>
         <div v-if="currentData == null">Loading...</div>
         <div v-else class="flex-wrapper">
             <div class="half">

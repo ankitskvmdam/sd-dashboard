@@ -43,25 +43,6 @@
                 <vs-td :data="data[indextr]['mask']">
                     {{data[indextr]['mask']}}
                 </vs-td>
-
-                <!-- <template class="expand-user" slot="expand">
-                    <div class="con-expand-users">
-                        <div class="con-btns-user">
-                            <video
-                                width="500px"
-                                height="350px"
-                                controls
-                                style="object-fit: cover;"
-                                v-if="data[indextr]['video'] != undefined || data[indextr]['video'] != null"
-                            >
-                            <source :src="data[indextr]['video']" type="video/mp4" />
-                            </video>
-                            <p v-else>
-                                Video Not Found!
-                            </p>
-                        </div>
-                    </div>
-                </template> -->
             </vs-tr>
         </template>
     </vs-table>

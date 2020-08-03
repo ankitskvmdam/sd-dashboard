@@ -32,7 +32,6 @@
 
 <script>
 import Data from "@/model/sd"
-
 export default {
     name: "SD-1",
     data() {

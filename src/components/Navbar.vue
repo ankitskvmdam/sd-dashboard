@@ -2,7 +2,7 @@
 
 <template>
   <div class="centerx">
-    <vs-navbar class="navbar" color="primary">
+    <vs-navbar class="navbar" color="#8e1e1d">
       <div slot="title" style="display: flex; align-items: center;">
           <span>
             <vs-icon
@@ -15,7 +15,7 @@
         </span>
         <vs-spacer></vs-spacer>
         <vs-navbar-title>
-          Company Name
+          Enterprise Safety Solution
         </vs-navbar-title>
       </div>
     </vs-navbar>

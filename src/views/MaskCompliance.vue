@@ -4,9 +4,9 @@
         :data="users"
         @selected="handleSelected"
     >
-     <template slot="header">
+    <template slot="header">
         <h3 style="margin-bottom: 1rem;">
-          Social Distance
+          Mask Compliance
         </h3>
       </template>
         <template slot="thead">
@@ -16,32 +16,37 @@
             <vs-th>Cluster/Location</vs-th>
             <vs-th>Violation Score</vs-th>
             <vs-th>Violation Density</vs-th>
+            <vs-th>Mask</vs-th>
         </template>
 
         <template slot-scope="{data}">
-            <vs-tr :data="indextr" :key="'sd' + indextr" v-for="(tr, indextr) in data" >
+            <vs-tr :data="indextr" :key="'Mask' + indextr" v-for="(tr, indextr) in data" >
                 <vs-td :data="data[indextr].Name">
                     {{data[indextr].Name}}
                 </vs-td>
 
-                <vs-td :data="data[indextr]['Employee ID']">
-                    {{data[indextr]['Employee ID']}}
+                <vs-td :data="data[indextr]['Empid']">
+                    {{data[indextr]['Empid']}}
                 </vs-td>
 
-                <vs-td :data="data[indextr]['Visitor ID']">
-                    {{data[indextr]['Visitor ID']}}
+                <vs-td :data="data[indextr]['Visitorid']">
+                    {{data[indextr]['Visitorid']}}
                 </vs-td>
 
-                <vs-td :data="data[indextr]['Cluster/Location']">
-                    {{data[indextr]['Cluster/Location']}}
+                <vs-td :data="data[indextr]['cluster/location']">
+                    {{data[indextr]['cluster/location']}}
                 </vs-td>
 
-                <vs-td :data="data[indextr]['Voilation Score']">
-                    {{data[indextr]['Voilation Score']}}
+                <vs-td :data="data[indextr]['voilation score']">
+                    {{data[indextr]['voilation score']}}
                 </vs-td>
 
-                <vs-td :data="data[indextr]['Voilation Density']">
-                    {{data[indextr]['Voilation Density']}}
+                <vs-td :data="data[indextr]['voilation density']">
+                    {{data[indextr]['voilation density']}}
+                </vs-td>
+
+                <vs-td :data="data[indextr]['mask']">
+                    {{data[indextr]['mask']}}
                 </vs-td>
             </vs-tr>
         </template>
@@ -50,10 +55,10 @@
 </template>
 
 <script>
-import Data from "@/model/sd"
+import Data from "@/model/sd_fr_mask"
 
 export default {
-    name: "SocialDistance",
+    name: "MaskCompliance",
     data() {
         return {
             users: Data,
@@ -61,7 +66,7 @@ export default {
     },
     methods: {
         handleSelected(indextr) {
-            this.$router.push(`/sd-1/${indextr}`)
+            this.$router.push(`/sd-2/${indextr}`)
         }
     }
 }

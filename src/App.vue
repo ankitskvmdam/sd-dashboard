@@ -12,7 +12,13 @@ import Sidebar from "@/components/Sidebar.vue";
 
 export default {
   name: "App",
-  components: { Navbar, Sidebar }
+  components: { Navbar, Sidebar },
+  mounted() {
+    this.$vs.theme({
+      primary: '#8e1e1d' // my new color
+    })
+
+  }
 }
 </script>
 

@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import SocialDistancing from '../views/SocialDistancing.vue'
+import MaskCompliance from '../views/MaskCompliance.vue'
+import ContainmentZone from '../views/ContainmentZone.vue'
+import PageUnderConstruction from "../views/TemporaryPage.vue"
 
 Vue.use(VueRouter)
 
@@ -15,6 +18,21 @@ Vue.use(VueRouter)
     path: '/social-distancing',
     name: 'SocialDistancing',
     component: SocialDistancing
+  },
+  {
+    path: '/mask',
+    name: 'MaskCompliance',
+    component: MaskCompliance
+  },
+  {
+    path: '/containment-zone',
+    name: 'ContainmentZone',
+    component: ContainmentZone
+  },
+  {
+    path: '/temp-page',
+    name: 'TemporaryPage',
+    component: PageUnderConstruction
   },
   {
     path: '/sd-1/:id',

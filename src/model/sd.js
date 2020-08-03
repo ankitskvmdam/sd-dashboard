@@ -10,6 +10,22 @@ export default [
     "Voilation Score": "5",
     "Voilation Density": "0.5",
     "video": RahuVideo,
+    "graph": {
+      x: [
+        '12-07-20',
+        '14-07-20',
+        '15-07-20',
+        '16-07-20',
+        '24-07-20',
+      ],
+      y: [
+        0.2,
+        0.56,
+        0.13,
+        0.22,
+        0.4
+      ]
+    }
   },
   {
     "Name": "Raju",
@@ -19,6 +35,23 @@ export default [
     "Voilation Score": "4",
     "Voilation Density": "0.4",
     "video": RajuVideo,
+    "graph": {
+      x: [
+        '12-07-20',
+        '14-07-20',
+        '15-07-20',
+        '16-07-20',
+        '24-07-20',
+      ],
+      y: [
+        0.15,
+        0.2,
+        0.11,
+        0.13,
+        0.11,
+        0.2
+      ]
+    }
   },
   {
     "Name": "Reshma",
@@ -28,6 +61,23 @@ export default [
     "Voilation Score": "6",
     "Voilation Density": "0.6",
     "video": null,
+    "graph": {
+      x: [
+        '12-07-20',
+        '14-07-20',
+        '15-07-20',
+        '16-07-20',
+        '24-07-20',
+      ],
+      y: [
+        0.16,
+        0.1,
+        0,
+        0.25,
+        0.33,
+        0.1
+      ]
+    }
   },
   {
     "Name": "Ramiz",
@@ -37,6 +87,23 @@ export default [
     "Voilation Score": "4",
     "Voilation Density": "0.4",
     "video": null,
+    "graph": {
+      x: [
+        '12-07-20',
+        '14-07-20',
+        '15-07-20',
+        '16-07-20',
+        '24-07-20',
+      ],
+      y: [
+        0.2,
+        0.2,
+        0.22,
+        0.25,
+        0.22,
+        0.1,
+      ]
+    }
   },
   {
     "Name": "Ali",
@@ -46,5 +113,21 @@ export default [
     "Voilation Score": "2",
     "Voilation Density": "0.2",
     "video": null,
+    "graph": {
+      x: [
+        '12-07-20',
+        '14-07-20',
+        '15-07-20',
+        '16-07-20',
+        '24-07-20',
+      ],
+      y: [
+        0.2,
+        0.56,
+        0.13,
+        0.22,
+        0.4
+      ]
+    }
   }
 ]

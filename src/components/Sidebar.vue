@@ -9,10 +9,9 @@
         spacer
         v-model="$store.state.sidebarActiveState"
     >
-
       <div class="header-sidebar" slot="header">
+        <img src="@/assets/logo.png" style="height: 30px; margin-bottom: 1rem; margin-left: 0.8rem;" /> <br/>
         <vs-avatar  size="70px" :src="AvatarImg" alt="user_img" />
-
         <h4>
           User's Name
         </h4>
@@ -26,6 +25,27 @@
       <vs-sidebar-item index="2" icon="linear_scale" to="/social-distancing">
         Social Distancing
       </vs-sidebar-item>
+
+      <vs-sidebar-item index="3" icon="linear_scale" to="/mask">
+        Mask Compliance
+      </vs-sidebar-item>
+
+      <vs-sidebar-item index="4" icon="new_releases" to="/containment-zone">
+        Containment Zone
+      </vs-sidebar-item>
+
+      <vs-sidebar-item index="7" icon="linear_scale" to="/temp-page">
+        Contactless Attendence
+      </vs-sidebar-item>
+
+      <vs-sidebar-item index="5" icon="track_changes" to="/temp-page">
+        Contact Tracing
+      </vs-sidebar-item>
+
+      <vs-sidebar-item index="6" icon="favorite" to="/temp-page">
+        Health Monitoring
+      </vs-sidebar-item>
+
 
       <vs-divider icon="person" position="left">
         User
