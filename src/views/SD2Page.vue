@@ -26,6 +26,11 @@
                 <p v-else>
                     Video Not Found!
                 </p>
+                <div style="margin-top: 1rem">
+                    <Chart
+                        :chart-data="currentData.graph"
+                    />
+                </div>
             </div>
         </div>
     </div>
@@ -33,9 +38,13 @@
 
 <script>
 import Data from "@/model/sd_fr_mask"
+import Chart from  "./Chart.vue"
 
 export default {
     name: "SD-2",
+    components: {
+        Chart
+    },
     data() {
         return {
             currentData: null,

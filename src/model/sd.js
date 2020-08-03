@@ -11,19 +11,21 @@ export default [
     "Voilation Density": "0.5",
     "video": RahuVideo,
     "graph": {
-      x: [
+      labels: [
         '12-07-20',
         '14-07-20',
         '15-07-20',
         '16-07-20',
-        '24-07-20',
+        '24-07-20'
       ],
-      y: [
-        0.2,
-        0.56,
-        0.13,
-        0.22,
-        0.4
+      datasets: [
+        {
+          data: [
+            0.3, 0.2, 0.56, 0.13, 0.22, 0.4
+          ],
+          label: "Rahul",
+          borderColor: '#005bff',
+        }
       ]
     }
   },
@@ -36,20 +38,21 @@ export default [
     "Voilation Density": "0.4",
     "video": RajuVideo,
     "graph": {
-      x: [
+      labels: [
         '12-07-20',
         '14-07-20',
         '15-07-20',
         '16-07-20',
-        '24-07-20',
+        '24-07-20'
       ],
-      y: [
-        0.15,
-        0.2,
-        0.11,
-        0.13,
-        0.11,
-        0.2
+      datasets: [
+        {
+          data: [
+            0.15, 0.2, 0.11, 0.13, 0.11, 0.2
+          ],
+          label: "Raju",
+          borderColor: '#005bff',
+        }
       ]
     }
   },
@@ -62,20 +65,21 @@ export default [
     "Voilation Density": "0.6",
     "video": null,
     "graph": {
-      x: [
+      labels: [
         '12-07-20',
         '14-07-20',
         '15-07-20',
         '16-07-20',
-        '24-07-20',
+        '24-07-20'
       ],
-      y: [
-        0.16,
-        0.1,
-        0,
-        0.25,
-        0.33,
-        0.1
+      datasets: [
+        {
+          data: [
+            0.33, 0.25, 0, 0.1, 0.16, 
+          ],
+          label: "Reshma",
+          borderColor: '#005bff',
+        }
       ]
     }
   },
@@ -88,20 +92,21 @@ export default [
     "Voilation Density": "0.4",
     "video": null,
     "graph": {
-      x: [
+      labels: [
         '12-07-20',
         '14-07-20',
         '15-07-20',
         '16-07-20',
-        '24-07-20',
+        '24-07-20'
       ],
-      y: [
-        0.2,
-        0.2,
-        0.22,
-        0.25,
-        0.22,
-        0.1,
+      datasets: [
+        {
+          data: [
+            0.2, 0.2, 0.22, 0.25, 0.22, 0.1
+          ],
+          label: "Ramiz",
+          borderColor: '#005bff',
+        }
       ]
     }
   },
@@ -114,19 +119,25 @@ export default [
     "Voilation Density": "0.2",
     "video": null,
     "graph": {
-      x: [
+      labels: [
         '12-07-20',
         '14-07-20',
         '15-07-20',
         '16-07-20',
-        '24-07-20',
+        '24-07-20'
       ],
-      y: [
-        0.2,
-        0.56,
-        0.13,
-        0.22,
-        0.4
+      datasets: [
+        {
+          data: [
+            0.29,
+            0.13,
+            0.43,
+            0.45,
+            0.5
+          ],
+          label: "Ali",
+          borderColor: '#005bff',
+        }
       ]
     }
   }
