@@ -6,7 +6,7 @@
     >
     <template slot="header">
         <h3 style="margin-bottom: 1rem;">
-          Contactless Attendence
+          Contactless Attendance
         </h3>
       </template>
         <template slot="thead">
