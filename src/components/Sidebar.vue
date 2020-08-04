@@ -34,15 +34,15 @@
         Containment Zone
       </vs-sidebar-item>
 
-      <vs-sidebar-item index="7" icon="linear_scale" to="/attendance">
+      <vs-sidebar-item index="5" icon="linear_scale" to="/attendance">
         Contactless Attendance
       </vs-sidebar-item>
 
-      <vs-sidebar-item index="5" icon="track_changes" to="/temp-page">
+      <vs-sidebar-item index="6" icon="track_changes" to="/temp-page">
         Contact Tracing
       </vs-sidebar-item>
 
-      <vs-sidebar-item index="6" icon="favorite" to="/temp-page">
+      <vs-sidebar-item index="7" icon="favorite" to="/temp-page">
         Health Monitoring
       </vs-sidebar-item>
 
@@ -51,10 +51,10 @@
         User
       </vs-divider>
 
-      <vs-sidebar-item index="7" icon="verified_user">
+      <vs-sidebar-item index="8" icon="verified_user">
         Configurations
       </vs-sidebar-item>
-      <vs-sidebar-item index="8" icon="account_box">
+      <vs-sidebar-item index="9" icon="account_box">
         Profile
       </vs-sidebar-item>
 
