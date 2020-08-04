@@ -1,3 +1,9 @@
+import  MarthVideo from "./sd_mask/martha.mp4";
+import GraceVideo from "./sd_video/grace-corrected.mp4";
+import MikeVideo from "./sd_video/mike-corrected.mp4";
+import NatashaVideo from "./sd_video/natasha-corrected.mp4";
+import  JohnVideo from "./sd_mask/john.mp4";
+
 export default [
  {
    "Name": "Mike",
@@ -6,6 +12,7 @@ export default [
    "login time": "9:03 AM",
    "attendance status": "marked",
     "accuracy": "100%",
+    "video": MikeVideo,
     "graph": {
       labels: [
         'Jan',
@@ -32,6 +39,7 @@ export default [
    "login time": "9:35 AM",
    "attendance status": "marked ",
    "accuracy": "100%",
+   "video": GraceVideo,
    "graph": {
       labels: [
         'Jan',
@@ -45,7 +53,7 @@ export default [
           data: [
             23, 24, 17, 23, 21
           ],
-          label: "Mike",
+          label: "Grace",
           borderColor: '#f00',
         }
       ]
@@ -58,6 +66,7 @@ export default [
    "login time": "9:20 AM",
    "attendance status": "marked",
    "accuracy": "100%",
+   "video": NatashaVideo,
    "graph": {
       labels: [
         'Jan',
@@ -71,7 +80,7 @@ export default [
           data: [
             26, 11, 24, 24, 24
           ],
-          label: "Mike",
+          label: "Natasha",
           borderColor: '#f00',
         }
       ]
@@ -84,6 +93,7 @@ export default [
    "login time": "10.00 AM",
    "attendance status": "marked",
    "accuracy": "100%",
+   "video": JohnVideo,
    "graph": {
       labels: [
         'Jan',
@@ -97,7 +107,7 @@ export default [
           data: [
             22, 24, 18, 25, 20
           ],
-          label: "Mike",
+          label: "John",
           borderColor: '#f00',
         }
       ]
@@ -110,6 +120,7 @@ export default [
    "login time": "11:00 AM",
    "attendance status": "marked",
    "accuracy": "100%",
+   "video": MarthVideo,
    "graph": {
       labels: [
         'Jan',
@@ -123,7 +134,7 @@ export default [
           data: [
             25, 28, 26, 26, 26
           ],
-          label: "Mike",
+          label: "Martha",
           borderColor: '#f00',
         }
       ]
