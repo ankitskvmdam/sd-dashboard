@@ -51,10 +51,10 @@
         User
       </vs-divider>
 
-      <vs-sidebar-item index="3" icon="verified_user">
+      <vs-sidebar-item index="7" icon="verified_user">
         Configurations
       </vs-sidebar-item>
-      <vs-sidebar-item index="4" icon="account_box">
+      <vs-sidebar-item index="8" icon="account_box">
         Profile
       </vs-sidebar-item>
 
