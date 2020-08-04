@@ -77,3 +77,18 @@ body {
         flex-direction: column;
     }
 }
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    background: #8e1e1d;
+    opacity: 0.8;
+    color: white;
+    padding: 5px 10px;
+    margin-bottom: 2rem;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
+}

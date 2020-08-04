@@ -1,6 +1,12 @@
 <template>
     <div class="route-container">
-        <h2 style="margin-bottom: 1rem;">Social Distancing</h2>
+        <div class="back-button" @click="goBack">
+            <vs-icon icon="keyboard_arrow_left"></vs-icon>
+            Go back
+        </div>
+        <h2 style="margin-bottom: 1rem;">
+            Social Distancing
+        </h2>
         <div v-if="currentData == null">Loading...</div>
         <div v-else class="flex-wrapper">
             <div class="half">
@@ -48,6 +54,11 @@ export default {
     data() {
         return {
             currentData: null,
+        }
+    },
+    methods: {
+        goBack() {
+            this.$router.push("/social-distancing")
         }
     },
     mounted() {

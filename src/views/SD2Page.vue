@@ -1,5 +1,9 @@
 <template>
     <div class="route-container">
+        <div class="back-button" @click="goBack">
+            <vs-icon icon="keyboard_arrow_left"></vs-icon>
+            Go back
+        </div>
         <h2 style="margin-bottom: 1rem;">Mask Compliance</h2>
         <div v-if="currentData == null">Loading...</div>
         <div v-else class="flex-wrapper">
@@ -48,6 +52,11 @@ export default {
     data() {
         return {
             currentData: null,
+        }
+    },
+    methods: {
+        goBack() {
+            this.$router.push("/mask")
         }
     },
     mounted() {
