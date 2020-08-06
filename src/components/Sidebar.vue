@@ -22,20 +22,21 @@
         Dashboard
       </vs-sidebar-item>
 
-      <vs-sidebar-item index="2" icon="linear_scale" to="/social-distancing">
-        Social Distancing
+
+      <vs-sidebar-item index="5" icon="linear_scale" to="/attendance">
+        Contactless Attendance
       </vs-sidebar-item>
 
       <vs-sidebar-item index="3" icon="linear_scale" to="/mask">
         Mask Compliance
       </vs-sidebar-item>
 
-      <vs-sidebar-item index="4" icon="new_releases" to="/containment-zone">
-        Containment Zone
+      <vs-sidebar-item index="2" icon="linear_scale" to="/social-distancing">
+        Social Distancing
       </vs-sidebar-item>
 
-      <vs-sidebar-item index="5" icon="linear_scale" to="/attendance">
-        Contactless Attendance
+      <vs-sidebar-item index="4" icon="new_releases" to="/containment-zone">
+        Containment Zone
       </vs-sidebar-item>
 
       <vs-sidebar-item index="6" icon="track_changes" to="/temp-page">
