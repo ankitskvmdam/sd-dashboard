@@ -12,11 +12,12 @@
             <div class="half">
                 <br><br>
                 <div>Name: <b> {{ currentData.Name }} </b><br><br></div>
-                <div>Employee Id: <b> {{ currentData['Employee ID'] }} </b><br><br></div>
-                <div>Visitor Id: <b> {{ currentData['Visitor ID'] }} </b><br><br></div>
-                <div>Cluster/Location: <b> {{ currentData['Cluster/Location'] }} </b><br><br></div>
-                <div>Violation Score: <b> {{ currentData['Voilation Score'] }} </b><br><br></div>
-                <div>Violation Density: <b> {{ currentData['Voilation Density'] }} </b><br><br></div>
+                <div>Employee Id: <b> {{ currentData['Empid'] }} </b><br><br></div>
+                <div>Mobile Number: <b> {{ currentData['Mobile number'] }} </b><br><br></div>
+                <div>Visitor Id: <b> {{ currentData['Visitorid'] }} </b><br><br></div>
+                <div>Cluster/Location: <b> {{ currentData['cluster/location'] }} </b><br><br></div>
+                <div>Violation Score: <b> {{ currentData['voilation score'] }} </b><br><br></div>
+                <div>Violation Density: <b> {{ currentData['voilation density'] }} </b><br><br></div>
             </div>
             <div class="half">
                 <video
@@ -24,12 +25,13 @@
                     height="350px"
                     controls
                     style="object-fit: cover;"
-                    v-if="currentData.video != undefined || currentData.video != null"
+                    v-if="currentData.video_url != undefined || currentData.video_url != null"
                 >
-                <source :src="currentData.video" type="video/mp4" />
+                <source :src="currentData.video_url" type="video/mp4" />
                 </video>
                 <p v-else>
                     Video Not Found!
+                    {{ currentData.video_url}}
                 </p>
 
                 <div style="margin-top: 1rem">
@@ -43,7 +45,10 @@
 </template>
 
 <script>
-import Data from "@/model/sd"
+import axios from "axios"
+import {social_api} from "@/model/constants"
+import { objectToArray } from "@/model/utils"
+
 import Chart from  "./Chart.vue"
 
 export default {
@@ -62,7 +67,17 @@ export default {
         }
     },
     mounted() {
-        this.currentData = Data[Number.parseInt(this.$route.params.id)]
+        // this.currentData = Data[Number.parseInt(this.$route.params.id)]
+
+        axios.get(social_api)
+        .then(data => {
+            const d = objectToArray(data.data)
+            this.currentData = d[Number.parseInt(this.$route.params.id)]
+            console.log(this.currentData.video_url)
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 }
 </script>

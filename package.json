@@ -1,5 +1,5 @@
 {
-  "name": "sd-dashboard",
+  "name": "enterprises-solution",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,9 +7,11 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "chart.js": "^2.9.3",
     "chartjs-plugin-labels": "^1.1.0",
     "core-js": "^3.6.5",
+    "jsonpickle": "^1.1.2",
     "material-icons": "^0.3.1",
     "vue": "^2.6.11",
     "vue-chartjs": "^3.5.0",

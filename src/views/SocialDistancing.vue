@@ -3,6 +3,7 @@
       <vs-table
         :data="users"
         @selected="handleSelected"
+        noDataText="Loading..."
     >
      <template slot="header">
         <h3 style="margin-bottom: 1rem;">
@@ -12,6 +13,7 @@
         <template slot="thead">
             <vs-th>Name</vs-th>
             <vs-th>Employee ID</vs-th>
+            <vs-th>Mobile Number</vs-th>
             <vs-th>Visitor ID</vs-th>
             <vs-th>Cluster/Location</vs-th>
             <vs-th>Violation Score</vs-th>
@@ -24,24 +26,28 @@
                     {{data[indextr].Name}}
                 </vs-td>
 
-                <vs-td :data="data[indextr]['Employee ID']">
-                    {{data[indextr]['Employee ID']}}
+                <vs-td :data="data[indextr]['Empid']">
+                    {{data[indextr]['Empid']}}
                 </vs-td>
 
-                <vs-td :data="data[indextr]['Visitor ID']">
-                    {{data[indextr]['Visitor ID']}}
+                <vs-td :data="data[indextr]['Mobile number']">
+                    {{data[indextr]['Mobile number']}}
                 </vs-td>
 
-                <vs-td :data="data[indextr]['Cluster/Location']">
-                    {{data[indextr]['Cluster/Location']}}
+                <vs-td :data="data[indextr]['Visitorid']">
+                    {{data[indextr]['Visitorid']}}
                 </vs-td>
 
-                <vs-td :data="data[indextr]['Voilation Score']">
-                    {{data[indextr]['Voilation Score']}}
+                <vs-td :data="data[indextr]['cluster/location']">
+                    {{data[indextr]['cluster/location']}}
                 </vs-td>
 
-                <vs-td :data="data[indextr]['Voilation Density']">
-                    {{data[indextr]['Voilation Density']}}
+                <vs-td :data="data[indextr]['voilation score']">
+                    {{data[indextr]['voilation score']}}
+                </vs-td>
+
+                <vs-td :data="data[indextr]['voilation density']">
+                    {{data[indextr]['voilation density']}}
                 </vs-td>
             </vs-tr>
         </template>
@@ -50,19 +56,37 @@
 </template>
 
 <script>
-import Data from "@/model/sd"
+import axios from "axios"
+import {jsonpickle} from "jsonpickle"
+import {social_api} from "@/model/constants"
+
+import { objectToArray } from "@/model/utils"
 
 export default {
     name: "SocialDistance",
     data() {
         return {
-            users: Data,
+            users: null,
         }
     },
     methods: {
         handleSelected(indextr) {
             this.$router.push(`/sd-1/${indextr}`)
         }
+    },
+    mounted() {
+
+        axios.get(social_api, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(data => {
+            this.users = objectToArray(data.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 }
 </script>
