@@ -3,6 +3,7 @@
       <vs-table
         :data="users"
         @selected="handleSelected"
+        noDataText="Loading..."
     >
     <template slot="header">
         <h3 style="margin-bottom: 1rem;">
@@ -12,6 +13,7 @@
         <template slot="thead">
             <vs-th>Name</vs-th>
             <vs-th>Employee ID</vs-th>
+            <vs-th>Mobile Number</vs-th>
             <vs-th>Visitor ID</vs-th>
             <vs-th>Cluster/Location</vs-th>
             <vs-th>Violation Score</vs-th>
@@ -27,6 +29,10 @@
 
                 <vs-td :data="data[indextr]['Empid']">
                     {{data[indextr]['Empid']}}
+                </vs-td>
+
+                <vs-td :data="data[indextr]['Mobile number']">
+                    {{data[indextr]['Mobile number']}}
                 </vs-td>
 
                 <vs-td :data="data[indextr]['Visitorid']">
@@ -55,19 +61,36 @@
 </template>
 
 <script>
-import Data from "@/model/sd_fr_mask"
+import axios from "axios"
+
+import {mask_api} from "@/model/constants"
+import { objectToArray } from "@/model/utils"
 
 export default {
     name: "MaskCompliance",
     data() {
         return {
-            users: Data,
+            users: null,
         }
     },
     methods: {
         handleSelected(indextr) {
             this.$router.push(`/sd-2/${indextr}`)
         }
+    },
+    mounted() {
+
+        axios.get(mask_api, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(data => {
+            this.users = objectToArray(data.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 }
 </script>

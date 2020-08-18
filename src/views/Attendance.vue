@@ -3,6 +3,7 @@
       <vs-table
         :data="users"
         @selected="handleSelected"
+        noDataText="Loading..."
     >
     <template slot="header">
         <h3 style="margin-bottom: 1rem;">
@@ -12,6 +13,7 @@
         <template slot="thead">
             <vs-th>Name</vs-th>
             <vs-th>Employee ID</vs-th>
+            <vs-th>Mobile Number</vs-th>
             <vs-th>Cluster/Location</vs-th>
             <vs-th>Login Time</vs-th>
             <vs-th>Attendance Status</vs-th>
@@ -28,8 +30,12 @@
                     {{data[indextr]['Emp_id']}}
                 </vs-td>
 
-                <vs-td :data="data[indextr]['location']">
-                    {{data[indextr]['location']}}
+                <vs-td :data="data[indextr]['Mobile number']">
+                    {{data[indextr]['Mobile number']}}
+                </vs-td>
+
+                <vs-td :data="data[indextr]['Location']">
+                    {{data[indextr]['Location']}}
                 </vs-td>
 
                 <vs-td :data="data[indextr]['login time']">
@@ -50,19 +56,36 @@
 </template>
 
 <script>
-import Data from "@/model/attendence"
+import axios from "axios"
+
+import {attendance_api} from "@/model/constants"
+import { objectToArray } from "@/model/utils"
 
 export default {
-    name: "MaskCompliance",
+    name: "Attendace",
     data() {
         return {
-            users: Data,
+            users: null,
         }
     },
     methods: {
         handleSelected(indextr) {
             this.$router.push(`/sd-4/${indextr}`)
         }
+    },
+    mounted() {
+
+        axios.get(attendance_api, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(data => {
+            this.users = objectToArray(data.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 }
 </script>

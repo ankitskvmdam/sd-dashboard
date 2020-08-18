@@ -11,6 +11,7 @@
                 <br><br>
                 <div>Name: <b> {{ currentData.Name }} </b><br><br></div>
                 <div>Employee Id: <b> {{ currentData['Empid'] }} </b><br><br></div>
+                <div>Mobile Number: <b> {{ currentData['Mobile number'] }} </b><br><br></div>
                 <div>Visitor Id: <b> {{ currentData['Visitorid'] }} </b><br><br></div>
                 <div>Cluster/Location: <b> {{ currentData['cluster/location'] }} </b><br><br></div>
                 <div>Violation Score: <b> {{ currentData['voilation score'] }} </b><br><br></div>
@@ -23,9 +24,9 @@
                     height="350px"
                     controls
                     style="object-fit: cover;"
-                    v-if="currentData.video != undefined || currentData.video != null"
+                    v-if="currentData.video_url != undefined || currentData.video_url != null"
                 >
-                <source :src="currentData.video" type="video/mp4" />
+                <source :src="currentData.video_url" type="video/mp4" />
                 </video>
                 <p v-else>
                     Video Not Found!
@@ -41,7 +42,10 @@
 </template>
 
 <script>
-import Data from "@/model/sd_fr_mask"
+import axios from "axios"
+import {mask_api} from "@/model/constants"
+import { objectToArray, stringToArray } from "@/model/utils"
+
 import Chart from  "./Chart.vue"
 
 export default {
@@ -60,7 +64,29 @@ export default {
         }
     },
     mounted() {
-        this.currentData = Data[Number.parseInt(this.$route.params.id)]
+        // this.currentData = Data[Number.parseInt(this.$route.params.id)]
+
+        axios.get(mask_api)
+        .then(data => {
+            const d = objectToArray(data.data)
+            this.currentData = d[Number.parseInt(this.$route.params.id)]
+
+            const graph_data = {
+                labels: stringToArray(this.currentData.Date),
+                datasets: [
+                    {
+                        data: stringToArray(this.currentData["Voilation"], 1),
+                        label: this.currentData.Name,
+                        borderColor: '#005bff',
+                    }
+                ]
+            }
+            
+            this.currentData["graph"] = graph_data
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 }
 </script>

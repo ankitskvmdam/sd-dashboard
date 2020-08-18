@@ -57,9 +57,8 @@
 
 <script>
 import axios from "axios"
-import {jsonpickle} from "jsonpickle"
-import {social_api} from "@/model/constants"
 
+import {social_api} from "@/model/constants"
 import { objectToArray } from "@/model/utils"
 
 export default {

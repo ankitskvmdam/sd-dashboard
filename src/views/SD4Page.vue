@@ -11,7 +11,8 @@
                 <br><br>
                 <div>Name: <b> {{ currentData['Name'] }} </b><br><br></div>
                 <div>Employee Id: <b> {{ currentData['Emp_id'] }} </b><br><br></div>
-                <div>Cluster/Location: <b> {{ currentData['location'] }} </b><br><br></div>
+                <div>Mobile Number: <b> {{ currentData['Mobile Number'] }} </b><br><br></div>
+                <div>Cluster/Location: <b> {{ currentData['Location'] }} </b><br><br></div>
                 <div>Login Time: <b> {{ currentData['login time'] }} </b><br><br></div>
                 <div>Attendance: <b> {{ currentData['attendance status'] }} </b><br><br></div>
                 <div>Accuracy: <b> {{ currentData['accuracy'] }} </b><br><br></div>
@@ -22,9 +23,9 @@
                     height="350px"
                     controls
                     style="object-fit: cover;"
-                    v-if="currentData.video != undefined || currentData.video != null"
+                    v-if="currentData.video_url != undefined || currentData.video_url != null"
                 >
-                <source :src="currentData.video" type="video/mp4" />
+                <source :src="currentData.video_url" type="video/mp4" />
                 </video>
                 <p v-else>
                     Video Not Found!
@@ -40,7 +41,10 @@
 </template>
 
 <script>
-import Data from "@/model/attendence"
+import axios from "axios"
+import {attendance_api} from "@/model/constants"
+import { objectToArray, stringToArray } from "@/model/utils"
+
 import Chart from  "./Chart.vue"
 
 export default {
@@ -59,7 +63,25 @@ export default {
         }
     },
     mounted() {
-        this.currentData = Data[Number.parseInt(this.$route.params.id)]
+        // this.currentData = Data[Number.parseInt(this.$route.params.id)]
+        axios.get(attendance_api)
+        .then(data => {
+            const d = objectToArray(data.data)
+            this.currentData = d[Number.parseInt(this.$route.params.id)]
+            
+            const graph_data = {
+                labels: stringToArray(this.currentData.Month),
+                datasets: [
+                    {
+                        data: stringToArray(this.currentData["Days_Present"], 1),
+                        label: this.currentData.Name,
+                        borderColor: '#005bff',
+                    }
+                ]
+            }
+            
+            this.currentData["graph"] = graph_data
+        })
     }
 }
 </script>

@@ -47,7 +47,7 @@
 <script>
 import axios from "axios"
 import {social_api} from "@/model/constants"
-import { objectToArray } from "@/model/utils"
+import { objectToArray, stringToArray } from "@/model/utils"
 
 import Chart from  "./Chart.vue"
 
@@ -73,7 +73,19 @@ export default {
         .then(data => {
             const d = objectToArray(data.data)
             this.currentData = d[Number.parseInt(this.$route.params.id)]
-            console.log(this.currentData.video_url)
+
+            const graph_data = {
+                labels: stringToArray(this.currentData.Date),
+                datasets: [
+                    {
+                        data: stringToArray(this.currentData["Voilation_Daywise"], 1),
+                        label: this.currentData.Name,
+                        borderColor: '#005bff',
+                    }
+                ]
+            }
+            
+            this.currentData["graph"] = graph_data
         })
         .catch(err => {
             console.log(err)
