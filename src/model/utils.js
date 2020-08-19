@@ -1,10 +1,12 @@
 export const objectToArray = obj => {
-    const arr = []
-    for (const [_, value] of Object.entries(obj)) {
-        arr.push(value)
-    }
+    // const arr = []
+    // for (const [_, value] of Object.entries(obj)) {
+    //     arr.push(value)
+    // }
 
-    return arr
+    // return arr
+
+    return obj
 }
 
 export const stringToArray = (str, to_int = 0) => {

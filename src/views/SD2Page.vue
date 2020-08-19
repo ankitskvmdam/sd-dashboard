@@ -13,7 +13,7 @@
                 <div>Employee Id: <b> {{ currentData['Empid'] }} </b><br><br></div>
                 <div>Mobile Number: <b> {{ currentData['Mobile number'] }} </b><br><br></div>
                 <div>Visitor Id: <b> {{ currentData['Visitorid'] }} </b><br><br></div>
-                <div>Cluster/Location: <b> {{ currentData['cluster/location'] }} </b><br><br></div>
+                <div>Cluster/Location: <b> {{ currentData['cluster']['location'] }} </b><br><br></div>
                 <div>Violation Score: <b> {{ currentData['voilation score'] }} </b><br><br></div>
                 <div>Violation Density: <b> {{ currentData['voilation density'] }} </b><br><br></div>
                 <div>Mask: <b> {{ currentData['mask'] }} </b><br><br></div>

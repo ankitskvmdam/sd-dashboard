@@ -39,8 +39,8 @@
                     {{data[indextr]['Visitorid']}}
                 </vs-td>
 
-                <vs-td :data="data[indextr]['cluster/location']">
-                    {{data[indextr]['cluster/location']}}
+                <vs-td :data="data[indextr]['cluster']['location']">
+                    {{data[indextr]['cluster']['location']}}
                 </vs-td>
 
                 <vs-td :data="data[indextr]['voilation score']">

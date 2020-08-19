@@ -50,13 +50,11 @@
 </template>
 
 <script>
-import Data from "@/model/sd_fr_mask"
-
 export default {
     name: "SD-2",
     data() {
         return {
-            users: Data,
+            users: null,
         }
     },
     methods: {

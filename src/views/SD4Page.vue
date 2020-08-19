@@ -11,7 +11,7 @@
                 <br><br>
                 <div>Name: <b> {{ currentData['Name'] }} </b><br><br></div>
                 <div>Employee Id: <b> {{ currentData['Emp_id'] }} </b><br><br></div>
-                <div>Mobile Number: <b> {{ currentData['Mobile Number'] }} </b><br><br></div>
+                <div>Mobile Number: <b> {{ currentData['Mobile number'] }} </b><br><br></div>
                 <div>Cluster/Location: <b> {{ currentData['Location'] }} </b><br><br></div>
                 <div>Login Time: <b> {{ currentData['login time'] }} </b><br><br></div>
                 <div>Attendance: <b> {{ currentData['attendance status'] }} </b><br><br></div>

@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import Data from "@/model/sd_fr_density"
+
 export default {
     name: "SD-3",
     data() {
